@@ -3,6 +3,7 @@
 #define _RECTANGLE_
 
 #include <string>
+#include <sstream>
 #include "Shape.h"
 
 class Rectangle : public Shape
@@ -29,6 +30,7 @@ class Rectangle : public Shape
         double getWidth();
         double getHeight();
 
+        std::string getSVGElement() const override;
         std::string getGcodePath() const override;
         std::string getGcodePocket() const override;
         std::string getGcodeOutline() const override;

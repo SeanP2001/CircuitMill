@@ -12,6 +12,7 @@ class Shape
         Shape();
         virtual ~Shape();
 
+        virtual std::string getSVGElement() const = 0;
         virtual std::string getGcodePath() const = 0;
         virtual std::string getGcodePocket() const = 0;
         virtual std::string getGcodeOutline() const = 0;
