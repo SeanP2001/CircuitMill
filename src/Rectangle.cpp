@@ -29,40 +29,88 @@ void Rectangle::setHeight(double height)
 }
 
 // GETTERS
-double Rectangle::getX()
+double Rectangle::getX() const
 {
     return x;
 }
 
-double Rectangle::getY()
+double Rectangle::getY() const
 {
     return y;
 }
 
-double Rectangle::getWidth()
+double Rectangle::getWidth() const
 {
     return width;
 }
 
-double Rectangle::getHeight()
+double Rectangle::getHeight() const
 {
     return height;
 }
 
 
-// <rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+/*
+https://www.w3schools.com/graphics/svg_rect.asp
+
+<rect x="50" y="20" width="150" height="150" />
+*/
 std::string Rectangle::getSVGElement() const 
 {
     std::ostringstream svgElement;   
 
-    svgElement << "<rect width=\"" << width << "\" height=\"" << height << "\">";
+    svgElement << "<rect x=\"";
+    svgElement << std::fixed << std::setprecision(2) << x;     // format (fixed = decimal notation)(set precision = 2 decimal places)
+    svgElement << "\" y=\"";
+    svgElement << std::fixed << std::setprecision(2) << y; 
+    svgElement << "\" width=\"";
+    svgElement << std::fixed << std::setprecision(2) << width;     // format (fixed = decimal notation)(set precision = 2 decimal places)
+    svgElement << "\" height=\"";
+    svgElement << std::fixed << std::setprecision(2) << height; 
+    svgElement << "\" />";
      
     return svgElement.str();
 }
 
+
+/*
+https://www.intuwiz.com/rectangle.html
+
+PARAMETERS NEEDED:
+    Tool movement: ON / OUTSIDE / INSIDE 	
+    Cutting direction: CLOCKWISE / ANTICLOCKWISE	
+    Side a (height): 20
+    Side b (width):	25
+    Tool diameter: 6
+    Total depth of cutting:	1.00
+    Depth of cutting per pass: 1.00
+    Feed Rate (X,Y G00): 70
+    Feed Rate (X,Y G01): 50
+    Feed Rate (Z G00): 70
+    Feed Rate (Z G01): 50
+    Distance Xc: 5
+    Distance Yc: 15
+    Safe Z above surface: 0.5
+ 
+NC FILE:
+%
+G00 Z0.5 (raise the tool to the clearance height)
+G00 X0 Y0 (the movement of the tool to the start point of the milling (point 5))
+G01 Z-1 F50 (lower the tool to the desired cutting depth)
+G01 X0 Y20 F50 (milling side a)
+G01 X30 Y20 (milling side b)
+G01 X30 Y0 (milling side a)
+G01 X0 Y0 (milling side b, return to the start point for milling) 
+G00 Z0.5 F70 (raise the tool to the clearance height)
+M30 (end of the control program)
+%
+*/
+/*
 std::string Rectangle::getGcodePath() const 
 {
+    std::ostringstream gcodePath;   
 
+    return gcodePath.str();
 }
 
 std::string Rectangle::getGcodePocket() const 
@@ -73,4 +121,23 @@ std::string Rectangle::getGcodePocket() const
 std::string Rectangle::getGcodeOutline() const 
 {
 
+}
+*/
+
+std::string Rectangle::toString() const 
+{
+    std::ostringstream rectangleString;
+
+    rectangleString << "Rectangle[x=";
+    rectangleString << std::fixed << std::setprecision(2) << x;     // format (fixed = decimal notation)(set precision = 2 decimal places)
+    rectangleString << ", y=";
+    rectangleString << std::fixed << std::setprecision(2) << y;     
+    
+    rectangleString << ", width=";
+    rectangleString << std::fixed << std::setprecision(2) << width;     
+    rectangleString << ", height=";
+    rectangleString << std::fixed << std::setprecision(2) << height;
+    rectangleString << "]";        
+    
+    return rectangleString.str();
 }

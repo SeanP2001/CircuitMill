@@ -1,9 +1,10 @@
 
-#ifndef _RECTANGLE_
-#define _RECTANGLE_
+#ifndef _RECTANGLE_H_
+#define _RECTANGLE_H_
 
 #include <string>
 #include <sstream>
+#include <iomanip>
 #include "Shape.h"
 
 class Rectangle : public Shape
@@ -17,23 +18,25 @@ class Rectangle : public Shape
     public:
         Rectangle();
         Rectangle(double x, double y, double width, double height);
-        Rectangle(const std::string& svgElement);
-        Rectangle(const std::string& gcode);
+        //Rectangle(const std::string& svgElement);
+        //Rectangle(const std::string& gcode);
 
         void setX(double x);
         void setY(double y);
         void setWidth(double width);
         void setHeight(double height);
 
-        double getX();
-        double getY();
-        double getWidth();
-        double getHeight();
+        double getX() const;
+        double getY() const;
+        double getWidth() const;
+        double getHeight() const;
 
         std::string getSVGElement() const override;
-        std::string getGcodePath() const override;
-        std::string getGcodePocket() const override;
-        std::string getGcodeOutline() const override;
+        //std::string getGcodePath() const override;
+        //std::string getGcodePocket() const override;
+        //std::string getGcodeOutline() const override;
+
+        std::string toString() const override;
 };
 
-#endif // _RECTANGLE_
+#endif // _RECTANGLE_H_
