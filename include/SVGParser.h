@@ -4,8 +4,11 @@
 
 #include <iostream>
 #include <fstream>
+#include <iostream>
 #include <string>
 #include <vector>
+#include <memory> // For smart pointers
+
 
 #include "Shape.h"
 #include "Rectangle.h"
@@ -13,21 +16,10 @@
 class SVGParser
 {
     private:
-        std::ifstream file;
-
-        int getwidth(const std::string& svgElement);
+        const static std::string ELEMENT_NAMES[1];
 
     public:
-        SVGParser();
-        SVGParser(const std::string& filePath);
-
-        std::vector<Shape> parse();
-        std::vector<Shape> parse(const std::string& svgElement);
-
-        Rectangle parseRectangle(const std::string& rectangleElement);
-
-        std::string getSVGAttribute(const std::string attributeName, const std::string& rectangleElement);
-        double getSVGDoubleAttribute(const std::string attributeName, const std::string& rectangleElement);
+        static std::vector<std::unique_ptr<Shape>> parse(const std::string& filePath);
 };
 
 #endif // _SVG_PARSER_H_
