@@ -26,10 +26,16 @@ int main()
     Rectangle* rect2 = new Rectangle(5, 15, 25, 35);                 
     std::cout << "Instantiate a Rectangle with the (x, y, w, h) constructor:\n" << rect2->toString() << "\n\n";   
 
+
+    Rectangle* rect3 = new Rectangle("<rect x=\"50\" y=\"20\" width=\"150\" height=\"150\"style=\"fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9\" />");                 
+    std::cout << "Instantiate a Rectangle with the SVG element constructor:\n" << rect3->toString() << "\n\n";  
+
+
     std::cout << "Put the Rectangle objects in a Shape vector and iterate through their strings:\n";
     std::vector<Shape*> shapes;                         // Instantiate a vector of shapes to contain all of shapes
     shapes.push_back(rect1);                            // Put the first Rectangle in the vector
     shapes.push_back(rect2);                            // Put the second Rectangle in the vector
+    shapes.push_back(rect3);                            // Put the second Rectangle in the vector
 
     for (const auto& shape : shapes)                    // Go through all of the shapes
     {                  

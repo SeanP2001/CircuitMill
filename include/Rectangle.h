@@ -15,10 +15,12 @@ class Rectangle : public Shape
         double width;
         double height;
 
+        const static std::string ATTRIBUTE_NAMES[4];
+
     public:
         Rectangle();
         Rectangle(double x, double y, double width, double height);
-        //Rectangle(const std::string& svgElement);
+        Rectangle(const std::string& svgElement);
         //Rectangle(const std::string& gcode);
 
         void setX(double x);
@@ -37,6 +39,8 @@ class Rectangle : public Shape
         //std::string getGcodeOutline() const override;
 
         std::string toString() const override;
+
+        void parseSVGAttributes(std::string svgElement) override;
 };
 
 #endif // _RECTANGLE_H_

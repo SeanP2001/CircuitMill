@@ -1,10 +1,12 @@
 
 #include "Rectangle.h"
 
+const std::string Rectangle::ATTRIBUTE_NAMES[] = {"x", "y", "width", "height"};
+
 // CONSTRUCTORS
 Rectangle::Rectangle() : x(0), y(0), width(0), height(0) {}
 Rectangle::Rectangle(double x, double y, double width, double height) : x(x), y(y), width(width), height(height) {}
-//Rectangle::Rectangle(const std::string& svgElement)
+Rectangle::Rectangle(const std::string& svgElement) : x(0), y(0), width(0), height(0) {parseSVGAttributes(svgElement);}
 //Rectangle::Rectangle(const std::string& gcode)
 
 // SETTERS
@@ -140,4 +142,32 @@ std::string Rectangle::toString() const
     rectangleString << "]";        
     
     return rectangleString.str();
+}
+
+void Rectangle::parseSVGAttributes(std::string svgElement) 
+{
+    for(std::string attribute : ATTRIBUTE_NAMES)
+    {
+        std::string searchTerm = attribute + "=\"";
+
+        size_t posBefore = svgElement.find(searchTerm) + searchTerm.length();
+        size_t posAfter = svgElement.find("\"", posBefore);
+
+        if(attribute == ATTRIBUTE_NAMES[0])
+        {
+            x = std::stod(svgElement.substr(posBefore, posAfter));
+        }
+        else if(attribute == ATTRIBUTE_NAMES[1])
+        {
+            y = std::stod(svgElement.substr(posBefore, posAfter));
+        }
+        else if(attribute == ATTRIBUTE_NAMES[2])
+        {
+            width = std::stod(svgElement.substr(posBefore, posAfter));
+        }
+        else if(attribute == ATTRIBUTE_NAMES[3])
+        {
+            height = std::stod(svgElement.substr(posBefore, posAfter));
+        }
+    }
 }

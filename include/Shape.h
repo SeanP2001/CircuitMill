@@ -18,6 +18,8 @@ class Shape
         //virtual std::string getGcodeOutline() const = 0;
 
         virtual std::string toString() const = 0;
+
+        virtual void parseSVGAttributes(std::string svgElement) = 0;
 };
 
 #endif // _SHAPE_H_
