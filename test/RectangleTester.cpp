@@ -1,3 +1,12 @@
+/**
+ * @file RectangleTester.cpp
+ * @author SeanP2001 
+ * @brief Test that all of the functions in the Rectangle class are working as expected
+ * @date 10/10/2023
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 
 #include "../include/Rectangle.h"
 

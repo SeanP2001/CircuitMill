@@ -1,3 +1,12 @@
+/**
+ * @file SVGParserTester.cpp
+ * @author SeanP2001 
+ * @brief Test that all of the functions in the SVGParser class are working as expected
+ * @date 10/10/2023
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 
 #include <iostream>
 #include <vector>

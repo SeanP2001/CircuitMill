@@ -1,0 +1,299 @@
+\hypertarget{classRectangle}{}\doxysection{Rectangle Class Reference}
+\label{classRectangle}\index{Rectangle@{Rectangle}}
+
+
+Represents a rectangular shape, implementing the \mbox{\hyperlink{classShape}{Shape}} interface.  
+
+
+
+
+{\ttfamily \#include $<$Rectangle.\+h$>$}
+
+Inheritance diagram for Rectangle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRectangle}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}\label{classRectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}} 
+{\bfseries Rectangle} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for a \mbox{\hyperlink{classRectangle}{Rectangle}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRectangle_a9c8e906984962c60c12aff947f50c3dc}{Rectangle}} (double \mbox{\hyperlink{classRectangle_ae6b5fc45ad8cbbc0e2330f2447a1ea49}{x}}, double \mbox{\hyperlink{classRectangle_a002db002308cd5df67dcb0f3b382416f}{y}}, double \mbox{\hyperlink{classRectangle_ac2c47512ca05c56cec73c32bb693d479}{width}}, double \mbox{\hyperlink{classRectangle_a58c0573f0d706d238759395e8272c6bf}{height}})
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for a \mbox{\hyperlink{classRectangle}{Rectangle}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRectangle_adae0544bc7de5889254e0ef17b38a3ba}{Rectangle}} (const std\+::string \&svg\+Element)
+\begin{DoxyCompactList}\small\item\em Constructor for a \mbox{\hyperlink{classRectangle}{Rectangle}} based on an SVG element. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRectangle_a73e55ff215a9862810078d69cd01dbc6}{setX}} (double \mbox{\hyperlink{classRectangle_ae6b5fc45ad8cbbc0e2330f2447a1ea49}{x}})
+\begin{DoxyCompactList}\small\item\em Sets the X-\/coordinate of the top-\/left corner of the rectangle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRectangle_ab16a3e1fe0d8e2a7d58233e78569aac7}{setY}} (double \mbox{\hyperlink{classRectangle_a002db002308cd5df67dcb0f3b382416f}{y}})
+\begin{DoxyCompactList}\small\item\em Sets the Y-\/coordinate of the top-\/left corner of the rectangle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRectangle_af0de79c24c56b5bc845154a32ff22595}{set\+Width}} (double \mbox{\hyperlink{classRectangle_ac2c47512ca05c56cec73c32bb693d479}{width}})
+\begin{DoxyCompactList}\small\item\em Sets the width of the rectangle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRectangle_afdd8b6a952a7d78d551e88e7b9e45f17}{set\+Height}} (double \mbox{\hyperlink{classRectangle_a58c0573f0d706d238759395e8272c6bf}{height}})
+\begin{DoxyCompactList}\small\item\em Sets the height of the rectangle. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classRectangle_a42eca79553a90968b0a7c9fcb8aeff11}{getX}} () const
+\begin{DoxyCompactList}\small\item\em Gets the X-\/coordinate of the top-\/left corner of the rectangle. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classRectangle_aedec4ecd8c1f09046ccfe431e88bb8b2}{getY}} () const
+\begin{DoxyCompactList}\small\item\em Gets the Y-\/coordinate of the top-\/left corner of the rectangle. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classRectangle_a0d38078e09cd3151d3009eed3a449660}{get\+Width}} () const
+\begin{DoxyCompactList}\small\item\em Gets the width of the rectangle. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classRectangle_ae2fb8da7f67a36a80d8f789eec63a074}{get\+Height}} () const
+\begin{DoxyCompactList}\small\item\em Gets the height of the rectangle. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRectangle_ad9db077c8ccf6e6a54f2c9dae7865d63}{get\+SVGElement}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the SVG representation of the rectangle. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRectangle_a895fd0dd6f3f65e8d38a22fc91e49403}{to\+String}} () const override
+\begin{DoxyCompactList}\small\item\em Converts the rectangle to a string representation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRectangle_af913bbbf7e2a46e658bd68977df86c8f}{parse\+SVGAttributes}} (std\+::string svg\+Element) override
+\begin{DoxyCompactList}\small\item\em Parses SVG attributes from the provided SVG element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{classShape_a0ca1c2a82129f991986a04f15c2167e4}{get\+SVGElement}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the SVG representation of the shape. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classShape_af0a19a4e71651a6ee0f4e037068f3d2a}{to\+String}} () const =0
+\begin{DoxyCompactList}\small\item\em Converts the shape to a string representation. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classShape_ad6680790d1711456d4346154f17fda25}{parse\+SVGAttributes}} (std\+::string svg\+Element)=0
+\begin{DoxyCompactList}\small\item\em Parses SVG attributes from the provided SVG element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRectangle_ae6b5fc45ad8cbbc0e2330f2447a1ea49}\label{classRectangle_ae6b5fc45ad8cbbc0e2330f2447a1ea49}} 
+double {\bfseries x}
+\begin{DoxyCompactList}\small\item\em X-\/coordinate of the top-\/left corner of the rectangle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRectangle_a002db002308cd5df67dcb0f3b382416f}\label{classRectangle_a002db002308cd5df67dcb0f3b382416f}} 
+double {\bfseries y}
+\begin{DoxyCompactList}\small\item\em Y-\/coordinate of the top-\/left corner of the rectangle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRectangle_ac2c47512ca05c56cec73c32bb693d479}\label{classRectangle_ac2c47512ca05c56cec73c32bb693d479}} 
+double {\bfseries width}
+\begin{DoxyCompactList}\small\item\em Width of the rectangle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRectangle_a58c0573f0d706d238759395e8272c6bf}\label{classRectangle_a58c0573f0d706d238759395e8272c6bf}} 
+double {\bfseries height}
+\begin{DoxyCompactList}\small\item\em Height of the rectangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRectangle_ab2babee9d46fa39137fe4da973143aac}\label{classRectangle_ab2babee9d46fa39137fe4da973143aac}} 
+static const std\+::string {\bfseries ATTRIBUTE\+\_\+\+NAMES} \mbox{[}4\mbox{]} = \{\char`\"{}x\char`\"{}, \char`\"{}y\char`\"{}, \char`\"{}width\char`\"{}, \char`\"{}height\char`\"{}\}
+\begin{DoxyCompactList}\small\item\em Array of attribute names for parsing SVG elements. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRectangle_aab2972ba7254b4edcf45a7cd46165ecc}\label{classRectangle_aab2972ba7254b4edcf45a7cd46165ecc}} 
+static const int {\bfseries PRECISION} = 6
+\begin{DoxyCompactList}\small\item\em Precision for formatting double values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a rectangular shape, implementing the \mbox{\hyperlink{classShape}{Shape}} interface. 
+
+The \mbox{\hyperlink{classRectangle}{Rectangle}} class provides functionality to work with rectangular shapes in the context of SVG elements and G-\/code instructions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRectangle_a9c8e906984962c60c12aff947f50c3dc}\label{classRectangle_a9c8e906984962c60c12aff947f50c3dc}} 
+\index{Rectangle@{Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{Rectangle()}{Rectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Rectangle\+::\+Rectangle (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{width,  }\item[{double}]{height }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor for a \mbox{\hyperlink{classRectangle}{Rectangle}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate of the top-\/left corner. \\
+\hline
+{\em y} & Y-\/coordinate of the top-\/left corner. \\
+\hline
+{\em width} & Width of the rectangle. \\
+\hline
+{\em height} & Height of the rectangle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRectangle_adae0544bc7de5889254e0ef17b38a3ba}\label{classRectangle_adae0544bc7de5889254e0ef17b38a3ba}} 
+\index{Rectangle@{Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{Rectangle()}{Rectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Rectangle\+::\+Rectangle (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{svg\+Element }\end{DoxyParamCaption})}
+
+
+
+Constructor for a \mbox{\hyperlink{classRectangle}{Rectangle}} based on an SVG element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em svg\+Element} & The SVG element representing the rectangle. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRectangle_ae2fb8da7f67a36a80d8f789eec63a074}\label{classRectangle_ae2fb8da7f67a36a80d8f789eec63a074}} 
+\index{Rectangle@{Rectangle}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily double Rectangle\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the height of the rectangle. 
+
+\begin{DoxyReturn}{Returns}
+double The height. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRectangle_ad9db077c8ccf6e6a54f2c9dae7865d63}\label{classRectangle_ad9db077c8ccf6e6a54f2c9dae7865d63}} 
+\index{Rectangle@{Rectangle}!getSVGElement@{getSVGElement}}
+\index{getSVGElement@{getSVGElement}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{getSVGElement()}{getSVGElement()}}
+{\footnotesize\ttfamily std\+::string Rectangle\+::get\+SVGElement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the SVG representation of the rectangle. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The SVG element representing the rectangle. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classShape_a0ca1c2a82129f991986a04f15c2167e4}{Shape}}.
+
+\mbox{\Hypertarget{classRectangle_a0d38078e09cd3151d3009eed3a449660}\label{classRectangle_a0d38078e09cd3151d3009eed3a449660}} 
+\index{Rectangle@{Rectangle}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily double Rectangle\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the width of the rectangle. 
+
+\begin{DoxyReturn}{Returns}
+double The width. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRectangle_a42eca79553a90968b0a7c9fcb8aeff11}\label{classRectangle_a42eca79553a90968b0a7c9fcb8aeff11}} 
+\index{Rectangle@{Rectangle}!getX@{getX}}
+\index{getX@{getX}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily double Rectangle\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the X-\/coordinate of the top-\/left corner of the rectangle. 
+
+\begin{DoxyReturn}{Returns}
+double The X-\/coordinate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRectangle_aedec4ecd8c1f09046ccfe431e88bb8b2}\label{classRectangle_aedec4ecd8c1f09046ccfe431e88bb8b2}} 
+\index{Rectangle@{Rectangle}!getY@{getY}}
+\index{getY@{getY}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily double Rectangle\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the Y-\/coordinate of the top-\/left corner of the rectangle. 
+
+\begin{DoxyReturn}{Returns}
+double The Y-\/coordinate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRectangle_af913bbbf7e2a46e658bd68977df86c8f}\label{classRectangle_af913bbbf7e2a46e658bd68977df86c8f}} 
+\index{Rectangle@{Rectangle}!parseSVGAttributes@{parseSVGAttributes}}
+\index{parseSVGAttributes@{parseSVGAttributes}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{parseSVGAttributes()}{parseSVGAttributes()}}
+{\footnotesize\ttfamily void Rectangle\+::parse\+SVGAttributes (\begin{DoxyParamCaption}\item[{std\+::string}]{svg\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Parses SVG attributes from the provided SVG element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em svg\+Element} & The SVG element containing rectangle attributes. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classShape_ad6680790d1711456d4346154f17fda25}{Shape}}.
+
+\mbox{\Hypertarget{classRectangle_afdd8b6a952a7d78d551e88e7b9e45f17}\label{classRectangle_afdd8b6a952a7d78d551e88e7b9e45f17}} 
+\index{Rectangle@{Rectangle}!setHeight@{setHeight}}
+\index{setHeight@{setHeight}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{setHeight()}{setHeight()}}
+{\footnotesize\ttfamily void Rectangle\+::set\+Height (\begin{DoxyParamCaption}\item[{double}]{height }\end{DoxyParamCaption})}
+
+
+
+Sets the height of the rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The new height. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRectangle_af0de79c24c56b5bc845154a32ff22595}\label{classRectangle_af0de79c24c56b5bc845154a32ff22595}} 
+\index{Rectangle@{Rectangle}!setWidth@{setWidth}}
+\index{setWidth@{setWidth}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{setWidth()}{setWidth()}}
+{\footnotesize\ttfamily void Rectangle\+::set\+Width (\begin{DoxyParamCaption}\item[{double}]{width }\end{DoxyParamCaption})}
+
+
+
+Sets the width of the rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The new width. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRectangle_a73e55ff215a9862810078d69cd01dbc6}\label{classRectangle_a73e55ff215a9862810078d69cd01dbc6}} 
+\index{Rectangle@{Rectangle}!setX@{setX}}
+\index{setX@{setX}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{setX()}{setX()}}
+{\footnotesize\ttfamily void Rectangle\+::setX (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+
+
+Sets the X-\/coordinate of the top-\/left corner of the rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The new X-\/coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRectangle_ab16a3e1fe0d8e2a7d58233e78569aac7}\label{classRectangle_ab16a3e1fe0d8e2a7d58233e78569aac7}} 
+\index{Rectangle@{Rectangle}!setY@{setY}}
+\index{setY@{setY}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{setY()}{setY()}}
+{\footnotesize\ttfamily void Rectangle\+::setY (\begin{DoxyParamCaption}\item[{double}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets the Y-\/coordinate of the top-\/left corner of the rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & The new Y-\/coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRectangle_a895fd0dd6f3f65e8d38a22fc91e49403}\label{classRectangle_a895fd0dd6f3f65e8d38a22fc91e49403}} 
+\index{Rectangle@{Rectangle}!toString@{toString}}
+\index{toString@{toString}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Rectangle\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Converts the rectangle to a string representation. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string A string representing the rectangle. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classShape_af0a19a4e71651a6ee0f4e037068f3d2a}{Shape}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Rectangle_8h}{Rectangle.\+h}}\item 
+src/\mbox{\hyperlink{Rectangle_8cpp}{Rectangle.\+cpp}}\end{DoxyCompactItemize}

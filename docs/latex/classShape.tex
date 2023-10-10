@@ -1,0 +1,92 @@
+\hypertarget{classShape}{}\doxysection{Shape Class Reference}
+\label{classShape}\index{Shape@{Shape}}
+
+
+An abstract base class representing shape objects, compatible with SVG elements and G-\/code instructions.  
+
+
+
+
+{\ttfamily \#include $<$Shape.\+h$>$}
+
+Inheritance diagram for Shape\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classShape}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{classShape_a0ca1c2a82129f991986a04f15c2167e4}{get\+SVGElement}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the SVG representation of the shape. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classShape_af0a19a4e71651a6ee0f4e037068f3d2a}{to\+String}} () const =0
+\begin{DoxyCompactList}\small\item\em Converts the shape to a string representation. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classShape_ad6680790d1711456d4346154f17fda25}{parse\+SVGAttributes}} (std\+::string svg\+Element)=0
+\begin{DoxyCompactList}\small\item\em Parses SVG attributes from the provided SVG element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract base class representing shape objects, compatible with SVG elements and G-\/code instructions. 
+
+The \mbox{\hyperlink{classShape}{Shape}} class serves as the foundation for various geometric shapes. Derived classes must implement specific functionalities like generating SVG elements, G-\/code paths, and other relevant operations. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classShape_a0ca1c2a82129f991986a04f15c2167e4}\label{classShape_a0ca1c2a82129f991986a04f15c2167e4}} 
+\index{Shape@{Shape}!getSVGElement@{getSVGElement}}
+\index{getSVGElement@{getSVGElement}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{getSVGElement()}{getSVGElement()}}
+{\footnotesize\ttfamily virtual std\+::string Shape\+::get\+SVGElement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the SVG representation of the shape. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The SVG element representing the shape. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classRectangle_ad9db077c8ccf6e6a54f2c9dae7865d63}{Rectangle}}.
+
+\mbox{\Hypertarget{classShape_ad6680790d1711456d4346154f17fda25}\label{classShape_ad6680790d1711456d4346154f17fda25}} 
+\index{Shape@{Shape}!parseSVGAttributes@{parseSVGAttributes}}
+\index{parseSVGAttributes@{parseSVGAttributes}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{parseSVGAttributes()}{parseSVGAttributes()}}
+{\footnotesize\ttfamily virtual void Shape\+::parse\+SVGAttributes (\begin{DoxyParamCaption}\item[{std\+::string}]{svg\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Parses SVG attributes from the provided SVG element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em svg\+Element} & The SVG element containing shape attributes. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classRectangle_af913bbbf7e2a46e658bd68977df86c8f}{Rectangle}}.
+
+\mbox{\Hypertarget{classShape_af0a19a4e71651a6ee0f4e037068f3d2a}\label{classShape_af0a19a4e71651a6ee0f4e037068f3d2a}} 
+\index{Shape@{Shape}!toString@{toString}}
+\index{toString@{toString}!Shape@{Shape}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily virtual std\+::string Shape\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Converts the shape to a string representation. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string A string representing the shape. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classRectangle_a895fd0dd6f3f65e8d38a22fc91e49403}{Rectangle}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Shape_8h}{Shape.\+h}}\end{DoxyCompactItemize}

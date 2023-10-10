@@ -1,3 +1,12 @@
+/**
+ * @file Rectangle.cpp
+ * @author SeanP2001 
+ * @brief Implements the Rectangle class.
+ * @date 10/10/2023
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 
 #include "Rectangle.h"
 

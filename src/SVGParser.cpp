@@ -1,3 +1,13 @@
+/**
+ * @file SVGParser.cpp
+ * @author SeanP2001 
+ * @brief Implements the SVGParser class.
+ * @date 10/10/2023
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include "SVGParser.h"
 
 const std::string SVGParser::ELEMENT_NAMES[] = {"rect"};

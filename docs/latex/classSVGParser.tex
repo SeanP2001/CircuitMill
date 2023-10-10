@@ -1,0 +1,105 @@
+\hypertarget{classSVGParser}{}\doxysection{SVGParser Class Reference}
+\label{classSVGParser}\index{SVGParser@{SVGParser}}
+
+
+Utility class for parsing SVG files and generating corresponding shapes.  
+
+
+
+
+{\ttfamily \#include $<$SVGParser.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classShape}{Shape}} $>$ $>$ \mbox{\hyperlink{classSVGParser_a88396ebaff306e1d81458a61f6e60418}{parse}} (const std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em Parse an SVG file and return a vector of shape objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classSVGParser_a6ab8eb47585df0266c47a4a842eb8884}{contains}} (const std\+::string \&str, const std\+::string \&substr)
+\begin{DoxyCompactList}\small\item\em Check if a string contains another string. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classSVGParser_a90d84e76a104d63a92cd0f36ffcfaf8a}{contains\+Recognised\+Element}} (const std\+::string \&svg\+Element)
+\begin{DoxyCompactList}\small\item\em Check if a given SVG element is recognized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSVGParser_a36124b63c823e3ed1ffc4df34f7e6fb8}\label{classSVGParser_a36124b63c823e3ed1ffc4df34f7e6fb8}} 
+static const std\+::string {\bfseries ELEMENT\+\_\+\+NAMES} \mbox{[}1\mbox{]} = \{\char`\"{}rect\char`\"{}\}
+\begin{DoxyCompactList}\small\item\em Array of recognized SVG element names. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSVGParser_a1bcef3b76ba38b6993cbc6fc4b9b81b7}\label{classSVGParser_a1bcef3b76ba38b6993cbc6fc4b9b81b7}} 
+static const std\+::string {\bfseries START\+\_\+\+MARKER} = \char`\"{}$<$\char`\"{}
+\begin{DoxyCompactList}\small\item\em Start marker for identifying SVG elements. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSVGParser_a8fe3fed4a285736b7966e9386f048be0}\label{classSVGParser_a8fe3fed4a285736b7966e9386f048be0}} 
+static const std\+::string {\bfseries END\+\_\+\+MARKER} = \char`\"{}/$>$\char`\"{}
+\begin{DoxyCompactList}\small\item\em End marker for identifying SVG elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class for parsing SVG files and generating corresponding shapes. 
+
+The \mbox{\hyperlink{classSVGParser}{SVGParser}} class provides static methods for parsing SVG files and creating shape objects based on the content of the files. It supports parsing of specific SVG elements like rectangles. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSVGParser_a6ab8eb47585df0266c47a4a842eb8884}\label{classSVGParser_a6ab8eb47585df0266c47a4a842eb8884}} 
+\index{SVGParser@{SVGParser}!contains@{contains}}
+\index{contains@{contains}!SVGParser@{SVGParser}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool SVGParser\+::contains (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str,  }\item[{const std\+::string \&}]{substr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Check if a string contains another string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to search in. \\
+\hline
+{\em substr} & The substring to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the substring is found, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSVGParser_a90d84e76a104d63a92cd0f36ffcfaf8a}\label{classSVGParser_a90d84e76a104d63a92cd0f36ffcfaf8a}} 
+\index{SVGParser@{SVGParser}!containsRecognisedElement@{containsRecognisedElement}}
+\index{containsRecognisedElement@{containsRecognisedElement}!SVGParser@{SVGParser}}
+\doxysubsubsection{\texorpdfstring{containsRecognisedElement()}{containsRecognisedElement()}}
+{\footnotesize\ttfamily bool SVGParser\+::contains\+Recognised\+Element (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{svg\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Check if a given SVG element is recognized. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em svg\+Element} & The SVG element to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the element is recognized, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSVGParser_a88396ebaff306e1d81458a61f6e60418}\label{classSVGParser_a88396ebaff306e1d81458a61f6e60418}} 
+\index{SVGParser@{SVGParser}!parse@{parse}}
+\index{parse@{parse}!SVGParser@{SVGParser}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classShape}{Shape}} $>$ $>$ SVGParser\+::parse (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parse an SVG file and return a vector of shape objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The path to the SVG file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of unique pointers to \mbox{\hyperlink{classShape}{Shape}} objects. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{SVGParser_8h}{SVGParser.\+h}}\item 
+src/\mbox{\hyperlink{SVGParser_8cpp}{SVGParser.\+cpp}}\end{DoxyCompactItemize}
