@@ -9,6 +9,7 @@
                 "-g",
                 "-I${workspaceFolder}/include",
                 "${workspaceFolder}/src/Rectangle.cpp",
+                "${workspaceFolder}/src/SVGParser.cpp",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",

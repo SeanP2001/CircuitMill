@@ -21,18 +21,26 @@ std::vector<std::unique_ptr<Shape>> SVGParser::parse(const std::string& filePath
         return shapes;
     }
 
+    // THIS WILL NOT CURRENTLY HANDLE MULTI-LINE ELEMENTS
     std::string line;                                                               // Create a string to store each line
     while(std::getline(svgFile, line))                                              // Go through each line of the file
     {
-        size_t posBefore = line.find("<");                                          // Find the start and end of each element 
-        size_t posAfter = line.find("/>", posBefore) + 2;                           // THIS WILL NOT CURRENTLY HANDLE MULTI-LINE ELEMENTS
-        std::string svgElement = line.substr(posBefore, posAfter);              
-
-        if(svgElement.find(ELEMENT_NAMES[0]) != std::string::npos)                  // If that element contains the name of a known element
+        if(line.find("<") != std::string::npos)                                     // If that line contains the start of an element
         {
-            auto rect = std::make_unique<Rectangle>(svgElement);                    // Instantiate the relevant shape object (as unique for automatic memory management)
+            size_t posBefore = line.find("<");                                      // Find the start position of the element
 
-            shapes.push_back(std::move(rect));                                      // And add it to the shapes vector (moving rather than copying across)
+            if(line.find("/>") != std::string::npos)                                // If the line contains the end of the element
+            {
+                size_t posAfter = line.find("/>", posBefore) + 2;                   // Find the end position of the element 
+                std::string svgElement = line.substr(posBefore, posAfter);          // and get the element contained within the start and end markers
+
+                if(svgElement.find(ELEMENT_NAMES[0]) != std::string::npos)          // If that element contains the name of a known element
+                {
+                    auto rect = std::make_unique<Rectangle>(svgElement);            // Instantiate the relevant shape object (as unique for automatic memory management)
+
+                    shapes.push_back(std::move(rect));                              // And add it to the shapes vector (moving rather than copying across)
+                }
+            }
         }
     }
 

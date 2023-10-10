@@ -2,6 +2,7 @@
 #include "Rectangle.h"
 
 const std::string Rectangle::ATTRIBUTE_NAMES[] = {"x", "y", "width", "height"};
+const int Rectangle::PRECISION = 6;                                                 // The number of decimal places for the shape attributes 
 
 // CONSTRUCTORS
 Rectangle::Rectangle() : x(0), y(0), width(0), height(0) {}
@@ -62,13 +63,13 @@ std::string Rectangle::getSVGElement() const
     std::ostringstream svgElement;   
 
     svgElement << "<rect x=\"";
-    svgElement << std::fixed << std::setprecision(2) << x;     // format (fixed = decimal notation)(set precision = 2 decimal places)
+    svgElement << std::fixed << std::setprecision(PRECISION) << x;          // format (fixed = decimal notation)(set precision = decimal places)
     svgElement << "\" y=\"";
-    svgElement << std::fixed << std::setprecision(2) << y; 
+    svgElement << std::fixed << std::setprecision(PRECISION) << y; 
     svgElement << "\" width=\"";
-    svgElement << std::fixed << std::setprecision(2) << width;     // format (fixed = decimal notation)(set precision = 2 decimal places)
+    svgElement << std::fixed << std::setprecision(PRECISION) << width;      // format (fixed = decimal notation)(set precision = decimal places)
     svgElement << "\" height=\"";
-    svgElement << std::fixed << std::setprecision(2) << height; 
+    svgElement << std::fixed << std::setprecision(PRECISION) << height; 
     svgElement << "\" />";
      
     return svgElement.str();
@@ -131,14 +132,14 @@ std::string Rectangle::toString() const
     std::ostringstream rectangleString;
 
     rectangleString << "Rectangle[x=";
-    rectangleString << std::fixed << std::setprecision(2) << x;     // format (fixed = decimal notation)(set precision = 2 decimal places)
+    rectangleString << std::fixed << std::setprecision(PRECISION) << x;     // format (fixed = decimal notation)(set precision = decimal places)
     rectangleString << ", y=";
-    rectangleString << std::fixed << std::setprecision(2) << y;     
+    rectangleString << std::fixed << std::setprecision(PRECISION) << y;     
     
     rectangleString << ", width=";
-    rectangleString << std::fixed << std::setprecision(2) << width;     
+    rectangleString << std::fixed << std::setprecision(PRECISION) << width;     
     rectangleString << ", height=";
-    rectangleString << std::fixed << std::setprecision(2) << height;
+    rectangleString << std::fixed << std::setprecision(PRECISION) << height;
     rectangleString << "]";        
     
     return rectangleString.str();

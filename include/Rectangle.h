@@ -16,6 +16,7 @@ class Rectangle : public Shape
         double height;
 
         const static std::string ATTRIBUTE_NAMES[4];
+        const static int PRECISION;
 
     public:
         Rectangle();
