@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['shape_0',['Shape',['../classShape.html',1,'']]],
-  ['svgparser_1',['SVGParser',['../classSVGParser.html',1,'']]]
+  ['rectangle_0',['Rectangle',['../classRectangle.html',1,'']]]
 ];

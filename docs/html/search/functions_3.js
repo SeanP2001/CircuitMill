@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['rectangle_0',['Rectangle',['../classRectangle.html#a8a933e0ebd9e80ce91e61ffe87fd577e',1,'Rectangle::Rectangle()'],['../classRectangle.html#a9c8e906984962c60c12aff947f50c3dc',1,'Rectangle::Rectangle(double x, double y, double width, double height)'],['../classRectangle.html#adae0544bc7de5889254e0ef17b38a3ba',1,'Rectangle::Rectangle(const std::string &amp;svgElement)']]]
+  ['parse_0',['parse',['../classSVGParser.html#a157d442ce8019c78da407b062432e207',1,'SVGParser']]],
+  ['parsesvgattributes_1',['parseSVGAttributes',['../classRectangle.html#af913bbbf7e2a46e658bd68977df86c8f',1,'Rectangle::parseSVGAttributes()'],['../classShape.html#ad6680790d1711456d4346154f17fda25',1,'Shape::parseSVGAttributes()']]]
 ];

@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['setheight_0',['setHeight',['../classRectangle.html#afdd8b6a952a7d78d551e88e7b9e45f17',1,'Rectangle']]],
-  ['setwidth_1',['setWidth',['../classRectangle.html#af0de79c24c56b5bc845154a32ff22595',1,'Rectangle']]],
-  ['setx_2',['setX',['../classRectangle.html#a73e55ff215a9862810078d69cd01dbc6',1,'Rectangle']]],
-  ['sety_3',['setY',['../classRectangle.html#ab16a3e1fe0d8e2a7d58233e78569aac7',1,'Rectangle']]]
+  ['rectangle_0',['Rectangle',['../classRectangle.html#a8a933e0ebd9e80ce91e61ffe87fd577e',1,'Rectangle::Rectangle()'],['../classRectangle.html#a9c8e906984962c60c12aff947f50c3dc',1,'Rectangle::Rectangle(double x, double y, double width, double height)'],['../classRectangle.html#adae0544bc7de5889254e0ef17b38a3ba',1,'Rectangle::Rectangle(const std::string &amp;svgElement)']]]
 ];

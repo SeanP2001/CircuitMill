@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['getheight_0',['getHeight',['../classRectangle.html#ae2fb8da7f67a36a80d8f789eec63a074',1,'Rectangle']]],
-  ['getsvgelement_1',['getSVGElement',['../classRectangle.html#ad9db077c8ccf6e6a54f2c9dae7865d63',1,'Rectangle::getSVGElement()'],['../classShape.html#a0ca1c2a82129f991986a04f15c2167e4',1,'Shape::getSVGElement()']]],
-  ['getwidth_2',['getWidth',['../classRectangle.html#a0d38078e09cd3151d3009eed3a449660',1,'Rectangle']]],
-  ['getx_3',['getX',['../classRectangle.html#a42eca79553a90968b0a7c9fcb8aeff11',1,'Rectangle']]],
-  ['gety_4',['getY',['../classRectangle.html#aedec4ecd8c1f09046ccfe431e88bb8b2',1,'Rectangle']]]
+  ['canvas_0',['Canvas',['../classCanvas.html#a5fce53f080ad6540094901f9768805a8',1,'Canvas::Canvas()'],['../classCanvas.html#a5515b9b261510865ae250d9b482191eb',1,'Canvas::Canvas(double width, double height)'],['../classCanvas.html#a9fade5bc6244750723033b21d8d509e5',1,'Canvas::Canvas(double width, double height, std::vector&lt; std::unique_ptr&lt; Shape &gt; &gt; shapes)']]],
+  ['contains_1',['contains',['../classSVGParser.html#a6ab8eb47585df0266c47a4a842eb8884',1,'SVGParser']]],
+  ['containsrecognisedelement_2',['containsRecognisedElement',['../classSVGParser.html#a90d84e76a104d63a92cd0f36ffcfaf8a',1,'SVGParser']]]
 ];
