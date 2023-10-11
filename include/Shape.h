@@ -17,8 +17,8 @@
  * @class Shape
  * @brief An abstract base class representing shape objects, compatible with SVG elements and G-code instructions.
  * 
- * The Shape class serves as the foundation for various geometric shapes. Derived classes must implement
- * specific functionalities like generating SVG elements, G-code paths, and other relevant operations.
+ * The Shape class serves as the foundation for various geometric shapes. 
+ * Derived classes must implement all functions.
  */
 class Shape
 {

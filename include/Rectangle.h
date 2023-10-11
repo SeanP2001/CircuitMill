@@ -20,7 +20,7 @@
  * @class Rectangle
  * @brief Represents a rectangular shape, implementing the Shape interface.
  * 
- * The Rectangle class provides functionality to work with rectangular shapes in the context of
+ * The Rectangle class provides functionality to work with rectangular shapes in
  * SVG elements and G-code instructions.
  */
 class Rectangle : public Shape
@@ -31,18 +31,20 @@ class Rectangle : public Shape
         double width;           ///< Width of the rectangle.
         double height;          ///< Height of the rectangle.
 
-        const static std::string ATTRIBUTE_NAMES[4]; ///< Array of attribute names for parsing SVG elements.
-        const static int PRECISION; ///< Precision for formatting double values.
+        const static std::string ATTRIBUTE_NAMES[4];    ///< Array containing SVG attribute names to extract values from.
+        const static int PRECISION;                     ///< Number of decimal places when formatting double values.
 
     public:
 
         /**
          * @brief Default constructor for a Rectangle.
+         * 
+         * `x`, `y`, `width` and `height` are all set to 0.
          */
         Rectangle();
 
         /**
-         * @brief Parameterized constructor for a Rectangle.
+         * @brief Constructor for a Rectangle setting a specified position and size.
          * @param x X-coordinate of the top-left corner.
          * @param y Y-coordinate of the top-left corner.
          * @param width Width of the rectangle.
@@ -53,6 +55,10 @@ class Rectangle : public Shape
         /**
          * @brief Constructor for a Rectangle based on an SVG element.
          * @param svgElement The SVG element representing the rectangle.
+         * 
+         * All instance variables are set to 0 before `parseSVGAttributes()` is called 
+         * and the instance variables are updated within this function, depending on the 
+         * SVG element contents.
          */
         Rectangle(const std::string& svgElement);
 
@@ -109,6 +115,9 @@ class Rectangle : public Shape
         /**
          * @brief Gets the SVG representation of the rectangle.
          * @return std::string The SVG element representing the rectangle.
+         * 
+         * Constructs an SVG element string with attribute values based on the instance variables.
+         * This string is then returned.
          */
         std::string getSVGElement() const override;
 
@@ -125,6 +134,10 @@ class Rectangle : public Shape
         /**
          * @brief Parses SVG attributes from the provided SVG element.
          * @param svgElement The SVG element containing rectangle attributes.
+         * 
+         * The SVG is searched for each of the `ATTRIBUTE_NAMES` and the 
+         * corresponding value is used to set the `x`, `y`, `width` and 
+         * `height` instance variables.
          */
         void parseSVGAttributes(std::string svgElement) override;
 };

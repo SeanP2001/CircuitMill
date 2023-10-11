@@ -11,7 +11,7 @@
 #include "Rectangle.h"
 
 const std::string Rectangle::ATTRIBUTE_NAMES[] = {"x", "y", "width", "height"};
-const int Rectangle::PRECISION = 6;                                                 // The number of decimal places for the shape attributes 
+const int Rectangle::PRECISION = 6;                                                 
 
 // CONSTRUCTORS
 Rectangle::Rectangle() : x(0), y(0), width(0), height(0) {}

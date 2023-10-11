@@ -12,7 +12,7 @@ Utility class for parsing SVG files and generating corresponding shapes.
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classShape}{Shape}} $>$ $>$ \mbox{\hyperlink{classSVGParser_a88396ebaff306e1d81458a61f6e60418}{parse}} (const std\+::string \&file\+Path)
+static std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classShape}{Shape}} $>$ $>$ \mbox{\hyperlink{classSVGParser_a157d442ce8019c78da407b062432e207}{parse}} (const std\+::string \&filepath)
 \begin{DoxyCompactList}\small\item\em Parse an SVG file and return a vector of shape objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -26,7 +26,7 @@ static bool \mbox{\hyperlink{classSVGParser_a90d84e76a104d63a92cd0f36ffcfaf8a}{c
 \item 
 \mbox{\Hypertarget{classSVGParser_a36124b63c823e3ed1ffc4df34f7e6fb8}\label{classSVGParser_a36124b63c823e3ed1ffc4df34f7e6fb8}} 
 static const std\+::string {\bfseries ELEMENT\+\_\+\+NAMES} \mbox{[}1\mbox{]} = \{\char`\"{}rect\char`\"{}\}
-\begin{DoxyCompactList}\small\item\em Array of recognized SVG element names. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Array of recognized SVG element names. This will be updated as more shapes are added to the parser. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classSVGParser_a1bcef3b76ba38b6993cbc6fc4b9b81b7}\label{classSVGParser_a1bcef3b76ba38b6993cbc6fc4b9b81b7}} 
 static const std\+::string {\bfseries START\+\_\+\+MARKER} = \char`\"{}$<$\char`\"{}
 \begin{DoxyCompactList}\small\item\em Start marker for identifying SVG elements. \end{DoxyCompactList}\item 
@@ -38,7 +38,12 @@ static const std\+::string {\bfseries END\+\_\+\+MARKER} = \char`\"{}/$>$\char`\
 \doxysubsection{Detailed Description}
 Utility class for parsing SVG files and generating corresponding shapes. 
 
-The \mbox{\hyperlink{classSVGParser}{SVGParser}} class provides static methods for parsing SVG files and creating shape objects based on the content of the files. It supports parsing of specific SVG elements like rectangles. 
+The \mbox{\hyperlink{classSVGParser}{SVGParser}} class provides static methods for parsing SVG files and creating shape objects based on the content of the file.
+
+The list of supported shapes currently includes\+:
+\begin{DoxyItemize}
+\item Rectangles 
+\end{DoxyItemize}
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classSVGParser_a6ab8eb47585df0266c47a4a842eb8884}\label{classSVGParser_a6ab8eb47585df0266c47a4a842eb8884}} 
@@ -77,13 +82,13 @@ Check if a given SVG element is recognized.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True if the element is recognized, false otherwise. 
+True if the element is recognized, false otherwise.
 \end{DoxyReturn}
-\mbox{\Hypertarget{classSVGParser_a88396ebaff306e1d81458a61f6e60418}\label{classSVGParser_a88396ebaff306e1d81458a61f6e60418}} 
+Checks if {\ttfamily svg\+Element} contains any of the recognised elements found in the {\ttfamily ELEMENT\+\_\+\+NAMES} array. \mbox{\Hypertarget{classSVGParser_a157d442ce8019c78da407b062432e207}\label{classSVGParser_a157d442ce8019c78da407b062432e207}} 
 \index{SVGParser@{SVGParser}!parse@{parse}}
 \index{parse@{parse}!SVGParser@{SVGParser}}
 \doxysubsubsection{\texorpdfstring{parse()}{parse()}}
-{\footnotesize\ttfamily std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classShape}{Shape}} $>$ $>$ SVGParser\+::parse (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classShape}{Shape}} $>$ $>$ SVGParser\+::parse (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -91,13 +96,29 @@ Parse an SVG file and return a vector of shape objects.
 
 
 \begin{DoxyParams}{Parameters}
-{\em file\+Path} & The path to the SVG file. \\
+{\em filepath} & The path to the SVG file. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A vector of unique pointers to \mbox{\hyperlink{classShape}{Shape}} objects. 
+A vector of unique pointers to \mbox{\hyperlink{classShape}{Shape}} objects.
 \end{DoxyReturn}
+This function reads an SVG file line by line, extracts SVG elements, and creates corresponding shape objects. It supports a finite list of SVG elements which are defined in the {\ttfamily ELEMENT\+\_\+\+NAMES} array. The parsed shapes are returned in a vector.
 
+The parsing process involves\+:
+\begin{DoxyEnumerate}
+\item Opening the SVG file.
+\item Reading each line and extracting SVG elements by finding their {\ttfamily START\+\_\+\+MARKER} and {\ttfamily END\+\_\+\+MARKER}.
+\item Instantiating shape objects, passing the SVG elements.
+\item Adding the created shapes to a vector.
+\item Returning the vector of shapes.
+\end{DoxyEnumerate}
+
+Example Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::vector<std::unique\_ptr<Shape>>\ shapes\ =\ \mbox{\hyperlink{classSVGParser_a157d442ce8019c78da407b062432e207}{SVGParser::parse}}(\textcolor{stringliteral}{"{}path/to/file.svg"{}});}
+
+\end{DoxyCode}
+ 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

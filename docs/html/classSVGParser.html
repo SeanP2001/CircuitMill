@@ -85,9 +85,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a88396ebaff306e1d81458a61f6e60418"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSVGParser.html#a88396ebaff306e1d81458a61f6e60418">parse</a> (const std::string &amp;filePath)</td></tr>
-<tr class="memdesc:a88396ebaff306e1d81458a61f6e60418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse an SVG file and return a vector of shape objects.  <br /></td></tr>
-<tr class="separator:a88396ebaff306e1d81458a61f6e60418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a157d442ce8019c78da407b062432e207"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSVGParser.html#a157d442ce8019c78da407b062432e207">parse</a> (const std::string &amp;filepath)</td></tr>
+<tr class="memdesc:a157d442ce8019c78da407b062432e207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse an SVG file and return a vector of shape objects.  <br /></td></tr>
+<tr class="separator:a157d442ce8019c78da407b062432e207"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
@@ -102,7 +102,7 @@ Static Private Member Functions</h2></td></tr>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a36124b63c823e3ed1ffc4df34f7e6fb8"><td class="memItemLeft" align="right" valign="top"><a id="a36124b63c823e3ed1ffc4df34f7e6fb8" name="a36124b63c823e3ed1ffc4df34f7e6fb8"></a>
 static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ELEMENT_NAMES</b> [1] = {&quot;rect&quot;}</td></tr>
-<tr class="memdesc:a36124b63c823e3ed1ffc4df34f7e6fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of recognized SVG element names. <br /></td></tr>
+<tr class="memdesc:a36124b63c823e3ed1ffc4df34f7e6fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of recognized SVG element names. This will be updated as more shapes are added to the parser. <br /></td></tr>
 <tr class="separator:a36124b63c823e3ed1ffc4df34f7e6fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bcef3b76ba38b6993cbc6fc4b9b81b7"><td class="memItemLeft" align="right" valign="top"><a id="a1bcef3b76ba38b6993cbc6fc4b9b81b7" name="a1bcef3b76ba38b6993cbc6fc4b9b81b7"></a>
 static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>START_MARKER</b> = &quot;&lt;&quot;</td></tr>
@@ -115,7 +115,10 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>E
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Utility class for parsing SVG files and generating corresponding shapes. </p>
-<p>The <a class="el" href="classSVGParser.html" title="Utility class for parsing SVG files and generating corresponding shapes.">SVGParser</a> class provides static methods for parsing SVG files and creating shape objects based on the content of the files. It supports parsing of specific SVG elements like rectangles. </p>
+<p>The <a class="el" href="classSVGParser.html" title="Utility class for parsing SVG files and generating corresponding shapes.">SVGParser</a> class provides static methods for parsing SVG files and creating shape objects based on the content of the file.</p>
+<p>The list of supported shapes currently includes:</p><ul>
+<li>Rectangles </li>
+</ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6ab8eb47585df0266c47a4a842eb8884" name="a6ab8eb47585df0266c47a4a842eb8884"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ab8eb47585df0266c47a4a842eb8884">&#9670;&#160;</a></span>contains()</h2>
@@ -194,12 +197,13 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>E
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the element is recognized, false otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the element is recognized, false otherwise.</dd></dl>
+<p>Checks if <code>svgElement</code> contains any of the recognised elements found in the <code>ELEMENT_NAMES</code> array. </p>
 
 </div>
 </div>
-<a id="a88396ebaff306e1d81458a61f6e60418" name="a88396ebaff306e1d81458a61f6e60418"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88396ebaff306e1d81458a61f6e60418">&#9670;&#160;</a></span>parse()</h2>
+<a id="a157d442ce8019c78da407b062432e207" name="a157d442ce8019c78da407b062432e207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a157d442ce8019c78da407b062432e207">&#9670;&#160;</a></span>parse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,7 +215,7 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>E
           <td class="memname">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</a> &gt; &gt; SVGParser::parse </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>filePath</em></td><td>)</td>
+          <td class="paramname"><em>filepath</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -225,12 +229,22 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>E
 <p>Parse an SVG file and return a vector of shape objects. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filePath</td><td>The path to the SVG file. </td></tr>
+    <tr><td class="paramname">filepath</td><td>The path to the SVG file. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A vector of unique pointers to <a class="el" href="classShape.html" title="An abstract base class representing shape objects, compatible with SVG elements and G-code instructio...">Shape</a> objects. </dd></dl>
-
+<dl class="section return"><dt>Returns</dt><dd>A vector of unique pointers to <a class="el" href="classShape.html" title="An abstract base class representing shape objects, compatible with SVG elements and G-code instructio...">Shape</a> objects.</dd></dl>
+<p>This function reads an SVG file line by line, extracts SVG elements, and creates corresponding shape objects. It supports a finite list of SVG elements which are defined in the <code>ELEMENT_NAMES</code> array. The parsed shapes are returned in a vector.</p>
+<p>The parsing process involves:</p><ol type="1">
+<li>Opening the SVG file.</li>
+<li>Reading each line and extracting SVG elements by finding their <code>START_MARKER</code> and <code>END_MARKER</code>.</li>
+<li>Instantiating shape objects, passing the SVG elements.</li>
+<li>Adding the created shapes to a vector.</li>
+<li>Returning the vector of shapes.</li>
+</ol>
+<p>Example Usage: </p><div class="fragment"><div class="line">std::vector&lt;std::unique_ptr&lt;Shape&gt;&gt; shapes = <a class="code hl_function" href="classSVGParser.html#a157d442ce8019c78da407b062432e207">SVGParser::parse</a>(<span class="stringliteral">&quot;path/to/file.svg&quot;</span>);</div>
+<div class="ttc" id="aclassSVGParser_html_a157d442ce8019c78da407b062432e207"><div class="ttname"><a href="classSVGParser.html#a157d442ce8019c78da407b062432e207">SVGParser::parse</a></div><div class="ttdeci">static std::vector&lt; std::unique_ptr&lt; Shape &gt; &gt; parse(const std::string &amp;filepath)</div><div class="ttdoc">Parse an SVG file and return a vector of shape objects.</div><div class="ttdef"><b>Definition:</b> SVGParser.cpp:35</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>

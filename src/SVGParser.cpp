@@ -32,7 +32,7 @@ bool SVGParser::containsRecognisedElement(const std::string& line)
     return false;
 }
 
-std::vector<std::unique_ptr<Shape>> SVGParser::parse(const std::string& filePath)
+std::vector<std::unique_ptr<Shape>> SVGParser::parse(const std::string& filepath)
 {
     // create a shape vector
     // Open the file
@@ -42,12 +42,12 @@ std::vector<std::unique_ptr<Shape>> SVGParser::parse(const std::string& filePath
 
     std::vector<std::unique_ptr<Shape>> shapes;                                     // Create a shape vector to contain all of the shapes found in the file (unique_ptr for auto memory management)
 
-    std::ifstream svgFile(filePath);                                                // Instantiate an input file stream
+    std::ifstream svgFile(filepath);                                                // Instantiate an input file stream
 
     // If the file fails to open, show an error messsage
     if(!svgFile.is_open()) 
     {
-        std::cerr << "Error: Could not open SVG file: " << filePath << std::endl;
+        std::cerr << "Error: Could not open SVG file: " << filepath << std::endl;
         return shapes;
     }
 
