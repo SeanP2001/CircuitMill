@@ -44,8 +44,7 @@ std::vector<std::unique_ptr<Shape>> SVGParser::parse(const std::string& filepath
 
     std::ifstream svgFile(filepath);                                                // Instantiate an input file stream
 
-    // If the file fails to open, show an error messsage
-    if(!svgFile.is_open()) 
+    if(!svgFile.is_open())                                                          // If the file fails to open, show an error messsage
     {
         std::cerr << "Error: Could not open SVG file: " << filepath << std::endl;
         return shapes;
@@ -59,46 +58,57 @@ std::vector<std::unique_ptr<Shape>> SVGParser::parse(const std::string& filepath
 
     bool withinElement = false;                                                     // Indicates whether the start of the element has been found but not the end
 
-    while(std::getline(svgFile, line))                                                                          // Go through each line of the file
+    while(std::getline(svgFile, line))                                                          // Go through each line of the file
     {
-        if(contains(line, START_MARKER) && contains(line, END_MARKER) && containsRecognisedElement(line))       // If the line constains a complete knownn element (both start and end markers)
+        if(contains(line, START_MARKER) && contains(line, END_MARKER))                          // If the line constains a complete element (both start and end markers)
         {
-            posBefore = line.find(START_MARKER);                                                                // Get the positions of the start and end
+            posBefore = line.find(START_MARKER);                                                // Get the positions of the start and end
             posAfter = line.find(END_MARKER) + END_MARKER.length(); 
 
-            svgElement = line.substr(posBefore, posAfter);                                                      // and save the element
+            svgElement = line.substr(posBefore, posAfter);                                      // and save the element
         }
-        else if(contains(line, START_MARKER) && !contains(line, END_MARKER) && containsRecognisedElement(line)) // If the line only contains a start marker (of a known element)
+        else if(contains(line, START_MARKER) && !contains(line, END_MARKER))                    // If the line only contains a start marker 
         {
-            withinElement = true;                                                                               // Mark that the current line is within an element (has been started but not ended)
+            withinElement = true;                                                               // Mark that the current line is within an element (has been started but not ended)
 
-            posBefore = line.find(START_MARKER);                                                                // Find the start postion
+            posBefore = line.find(START_MARKER);                                                // Find the start postion
 
-            svgElement = line.substr(posBefore, line.length());                                                 // and save the element so far
+            svgElement = line.substr(posBefore, line.length());                                 // and save the element so far
         }
-        else if(!contains(line, START_MARKER) && contains(line, END_MARKER))                                    // If the line  only contains an end marker
+        else if(!contains(line, START_MARKER) && contains(line, END_MARKER))                    // If the line only contains an end marker
         {
-            withinElement = false;                                                                              // Mark that the element has been ended
+            withinElement = false;                                                              // Mark that the element has been ended
 
-            posAfter = line.find(END_MARKER) + END_MARKER.length();                                             // find the end position 
+            posAfter = line.find(END_MARKER) + END_MARKER.length();                             // find the end position 
 
-            svgElement += line.substr(0, posAfter);                                                             // an add the last part to the element
+            svgElement += line.substr(0, posAfter);                                             // an add the last part to the element
         }
-        else if(withinElement && !contains(line, START_MARKER) && !contains(line, END_MARKER))                  // If within an element
+        else if(withinElement && !contains(line, START_MARKER) && !contains(line, END_MARKER))  // If within an element
         {
-            svgElement += line;                                                                                 // add the line to the element             
+            svgElement += line;                                                                 // add the line to the element             
         }
 
-        if(contains(line, END_MARKER))                                  // If an element has finished in this line
+        if(contains(line, END_MARKER))                                                  // If an element has finished in this line
         {
-            if(contains(svgElement, ELEMENT_NAMES[0]))                  // If that element contains the name of a known element
+            if(contains(svgElement, ELEMENT_NAMES[0]))                                  // If that element contains the name of a known element
             {
-                auto rect = std::make_unique<Rectangle>(svgElement);    // Instantiate the relevant shape object (as unique for automatic memory management)
+                auto rect = std::make_unique<Rectangle>(svgElement);                    // Instantiate the relevant shape object (as unique for automatic memory management)
 
-                shapes.push_back(std::move(rect));                      // And add it to the shapes vector (moving rather than copying across)
+                shapes.push_back(std::move(rect));                                      // And add it to the shapes vector (moving rather than copying across)
             }
+            else                                                                        // If the element does not contain the name of a known element, show an error messsage
+            {
+                std::cerr << "Error: Unknown SVG element: " << svgElement << std::endl; 
+            }
+
+            svgElement = "";
         }
 
+    }
+
+    if(shapes.size() == 0)                                              // If the file contains no recognised shapes, show an error messsage
+    {
+        std::cerr << "Error: No recognised SVG elements found in: " << filepath << std::endl;
     }
 
     svgFile.close();                                                    // close the file

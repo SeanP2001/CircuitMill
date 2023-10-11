@@ -11,6 +11,7 @@
 #ifndef _RECTANGLE_H_
 #define _RECTANGLE_H_
 
+#include <iostream>
 #include <string>
 #include <sstream>
 #include <iomanip>

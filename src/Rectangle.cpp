@@ -158,26 +158,52 @@ void Rectangle::parseSVGAttributes(std::string svgElement)
 {
     for(std::string attribute : ATTRIBUTE_NAMES)
     {
-        std::string searchTerm = attribute + "=\"";
+        std::string searchTerm = attribute + "=\"";                             // Construct a search term e.g. "x=""
 
-        size_t posBefore = svgElement.find(searchTerm) + searchTerm.length();
-        size_t posAfter = svgElement.find("\"", posBefore);
+        size_t posBefore = svgElement.find(searchTerm);                         // Find the attribute name in the SVG element
 
-        if(attribute == ATTRIBUTE_NAMES[0])
+        if (posBefore != std::string::npos)                                     // If the attribute was found within the element
         {
-            x = std::stod(svgElement.substr(posBefore, posAfter));
-        }
-        else if(attribute == ATTRIBUTE_NAMES[1])
+            posBefore += searchTerm.length();                                   // Find the position just before the attribute value begins e.g. x="^100.000"
+            size_t posAfter = svgElement.find("\"", posBefore);                 // Find the position after the attribute value e.g. x="100.000^"
+
+            if(attribute == ATTRIBUTE_NAMES[0])                                 // Depending on which attribute was being searched for
+            {
+                x = std::stod(svgElement.substr(posBefore, posAfter));          // Set the relevant instance variable to the value found
+            }
+            else if(attribute == ATTRIBUTE_NAMES[1])
+            {
+                y = std::stod(svgElement.substr(posBefore, posAfter));
+            }
+            else if(attribute == ATTRIBUTE_NAMES[2])
+            {
+                width = std::stod(svgElement.substr(posBefore, posAfter));
+            }
+            else if(attribute == ATTRIBUTE_NAMES[3])
+            {
+                height = std::stod(svgElement.substr(posBefore, posAfter));
+            }
+        } 
+        else                                                                    // If the attribute could not be found within the element
         {
-            y = std::stod(svgElement.substr(posBefore, posAfter));
-        }
-        else if(attribute == ATTRIBUTE_NAMES[2])
-        {
-            width = std::stod(svgElement.substr(posBefore, posAfter));
-        }
-        else if(attribute == ATTRIBUTE_NAMES[3])
-        {
-            height = std::stod(svgElement.substr(posBefore, posAfter));
-        }
-    }
+            std::cerr << "Error: Attribute \"" << attribute << "\" not found in SVG element: " << svgElement << std::endl;
+
+            if(attribute == ATTRIBUTE_NAMES[0])                                 // Depending on which attribute was being searched for
+            {
+                std::cerr << "Error: Variable \"x\" was not updated from default value (0)" << std::endl;
+            }
+            else if(attribute == ATTRIBUTE_NAMES[1])
+            {
+                std::cerr << "Error: Variable \"y\" was not updated from default value (0)" << std::endl;
+            }
+            else if(attribute == ATTRIBUTE_NAMES[2])
+            {
+                std::cerr << "Error: Variable \"width\" was not updated from default value (0)" << std::endl;
+            }
+            else if(attribute == ATTRIBUTE_NAMES[3])
+            {
+                std::cerr << "Error: Variable \"height\" was not updated from default value (0)" << std::endl;
+            }
+        } 
+    }     
 }
