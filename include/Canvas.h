@@ -14,6 +14,9 @@
 #include <vector>
 #include <memory> // For smart pointers
 
+#include <sstream>
+#include <iomanip>
+
 #include "Shape.h"
 
 /**
@@ -28,6 +31,8 @@ class Canvas
         double height;                                  ///< Height of the canvas.
 
         std::vector<std::unique_ptr<Shape>> shapes;     ///< A vector of unique pointers to Shape objects.
+
+        const static int PRECISION;                     ///< Number of decimal places when formatting double values.
 
     public:
         /**
@@ -116,16 +121,16 @@ class Canvas
          * @brief Gets a specified shape
          * 
          * @param shapeNo The index of the requested shape.
-         * @return A unique pointer to the requested Shape objects.
+         * @return A const reference to the unique pointer of the requested Shape object.
          */
-        std::unique_ptr<Shape> getShape(int shapeNo) const;
+        const std::unique_ptr<Shape>& getShape(int shapeNo) const;
 
         /**
          * @brief Gets all of the Shape objects from the canvas.
          * 
-         * @return A vector of unique pointers to Shape objects.
+         * @return A const reference to a vector of unique pointers to Shape objects.
          */
-        std::vector<std::unique_ptr<Shape>> getShapes() const;
+        const std::vector<std::unique_ptr<Shape>>& getShapes() const;
         
 
         /**

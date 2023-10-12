@@ -72,6 +72,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classCanvas-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Canvas Class Reference</div></div>
 </div><!--header-->
@@ -114,12 +115,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad5d2fc0044f51cbd26b9c8a1d902227a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCanvas.html#ad5d2fc0044f51cbd26b9c8a1d902227a">addShapes</a> (const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</a> &gt; &gt; <a class="el" href="classCanvas.html#a325996265fc4293b60055953cf17b539">shapes</a>)</td></tr>
 <tr class="memdesc:ad5d2fc0044f51cbd26b9c8a1d902227a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds multiple <a class="el" href="classShape.html" title="An abstract base class representing shape objects, compatible with SVG elements and G-code instructio...">Shape</a> objects to the canvas.  <br /></td></tr>
 <tr class="separator:ad5d2fc0044f51cbd26b9c8a1d902227a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af67a61c6eae1fc26d4a9706b1c19f1fe"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCanvas.html#af67a61c6eae1fc26d4a9706b1c19f1fe">getShape</a> (int shapeNo) const</td></tr>
-<tr class="memdesc:af67a61c6eae1fc26d4a9706b1c19f1fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a specified shape.  <br /></td></tr>
-<tr class="separator:af67a61c6eae1fc26d4a9706b1c19f1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf2d28850c495548bd4488690e8d9bfa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCanvas.html#adf2d28850c495548bd4488690e8d9bfa">getShapes</a> () const</td></tr>
-<tr class="memdesc:adf2d28850c495548bd4488690e8d9bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all of the <a class="el" href="classShape.html" title="An abstract base class representing shape objects, compatible with SVG elements and G-code instructio...">Shape</a> objects from the canvas.  <br /></td></tr>
-<tr class="separator:adf2d28850c495548bd4488690e8d9bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a9d677b2bcdcd1b8d923b66e282095"><td class="memItemLeft" align="right" valign="top">const std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCanvas.html#aa4a9d677b2bcdcd1b8d923b66e282095">getShape</a> (int shapeNo) const</td></tr>
+<tr class="memdesc:aa4a9d677b2bcdcd1b8d923b66e282095"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a specified shape.  <br /></td></tr>
+<tr class="separator:aa4a9d677b2bcdcd1b8d923b66e282095"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa127d7fa40741946655036c7a4919722"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCanvas.html#aa127d7fa40741946655036c7a4919722">getShapes</a> () const</td></tr>
+<tr class="memdesc:aa127d7fa40741946655036c7a4919722"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all of the <a class="el" href="classShape.html" title="An abstract base class representing shape objects, compatible with SVG elements and G-code instructio...">Shape</a> objects from the canvas.  <br /></td></tr>
+<tr class="separator:aa127d7fa40741946655036c7a4919722"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1278b2b421d559e763dfdc19a60feb97"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCanvas.html#a1278b2b421d559e763dfdc19a60feb97">toString</a> () const</td></tr>
 <tr class="memdesc:a1278b2b421d559e763dfdc19a60feb97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the canvas to a string representation.  <br /></td></tr>
 <tr class="separator:a1278b2b421d559e763dfdc19a60feb97"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +139,13 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>height</b></td></tr
 std::vector&lt; std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>shapes</b></td></tr>
 <tr class="memdesc:a325996265fc4293b60055953cf17b539"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of unique pointers to <a class="el" href="classShape.html" title="An abstract base class representing shape objects, compatible with SVG elements and G-code instructio...">Shape</a> objects. <br /></td></tr>
 <tr class="separator:a325996265fc4293b60055953cf17b539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a3f270b1ab15ae8c61bb1c2a432425b9e"><td class="memItemLeft" align="right" valign="top"><a id="a3f270b1ab15ae8c61bb1c2a432425b9e" name="a3f270b1ab15ae8c61bb1c2a432425b9e"></a>
+static const int&#160;</td><td class="memItemRight" valign="bottom"><b>PRECISION</b> = 6</td></tr>
+<tr class="memdesc:a3f270b1ab15ae8c61bb1c2a432425b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of decimal places when formatting double values. <br /></td></tr>
+<tr class="separator:a3f270b1ab15ae8c61bb1c2a432425b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents an area containing shapes. </p>
@@ -316,14 +324,14 @@ std::vector&lt; std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</
 
 </div>
 </div>
-<a id="af67a61c6eae1fc26d4a9706b1c19f1fe" name="af67a61c6eae1fc26d4a9706b1c19f1fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af67a61c6eae1fc26d4a9706b1c19f1fe">&#9670;&#160;</a></span>getShape()</h2>
+<a id="aa4a9d677b2bcdcd1b8d923b66e282095" name="aa4a9d677b2bcdcd1b8d923b66e282095"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4a9d677b2bcdcd1b8d923b66e282095">&#9670;&#160;</a></span>getShape()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</a> &gt; Canvas::getShape </td>
+          <td class="memname">const std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</a> &gt; &amp; Canvas::getShape </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>shapeNo</em></td><td>)</td>
@@ -339,18 +347,18 @@ std::vector&lt; std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A unique pointer to the requested <a class="el" href="classShape.html" title="An abstract base class representing shape objects, compatible with SVG elements and G-code instructio...">Shape</a> objects. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to the unique pointer of the requested <a class="el" href="classShape.html" title="An abstract base class representing shape objects, compatible with SVG elements and G-code instructio...">Shape</a> object. </dd></dl>
 
 </div>
 </div>
-<a id="adf2d28850c495548bd4488690e8d9bfa" name="adf2d28850c495548bd4488690e8d9bfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf2d28850c495548bd4488690e8d9bfa">&#9670;&#160;</a></span>getShapes()</h2>
+<a id="aa127d7fa40741946655036c7a4919722" name="aa127d7fa40741946655036c7a4919722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa127d7fa40741946655036c7a4919722">&#9670;&#160;</a></span>getShapes()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</a> &gt; &gt; Canvas::getShapes </td>
+          <td class="memname">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</a> &gt; &gt; &amp; Canvas::getShapes </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -359,7 +367,7 @@ std::vector&lt; std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</
 </div><div class="memdoc">
 
 <p>Gets all of the <a class="el" href="classShape.html" title="An abstract base class representing shape objects, compatible with SVG elements and G-code instructio...">Shape</a> objects from the canvas. </p>
-<dl class="section return"><dt>Returns</dt><dd>A vector of unique pointers to <a class="el" href="classShape.html" title="An abstract base class representing shape objects, compatible with SVG elements and G-code instructio...">Shape</a> objects. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to a vector of unique pointers to <a class="el" href="classShape.html" title="An abstract base class representing shape objects, compatible with SVG elements and G-code instructio...">Shape</a> objects. </dd></dl>
 
 </div>
 </div>
@@ -492,8 +500,9 @@ std::vector&lt; std::unique_ptr&lt; <a class="el" href="classShape.html">Shape</
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="Canvas_8h_source.html">Canvas.h</a></li>
+<li>src/Canvas.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

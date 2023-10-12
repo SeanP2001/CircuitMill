@@ -32,9 +32,9 @@ void \mbox{\hyperlink{classCanvas_a7e999127865e693fb10a99c9b4ee81ae}{add\+Shape}
 \begin{DoxyCompactList}\small\item\em Adds a \mbox{\hyperlink{classShape}{Shape}} object to the canvas. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCanvas_ad5d2fc0044f51cbd26b9c8a1d902227a}{add\+Shapes}} (const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classShape}{Shape}} $>$ $>$ \mbox{\hyperlink{classCanvas_a325996265fc4293b60055953cf17b539}{shapes}})
 \begin{DoxyCompactList}\small\item\em Adds multiple \mbox{\hyperlink{classShape}{Shape}} objects to the canvas. \end{DoxyCompactList}\item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classShape}{Shape}} $>$ \mbox{\hyperlink{classCanvas_af67a61c6eae1fc26d4a9706b1c19f1fe}{get\+Shape}} (int shape\+No) const
+const std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classShape}{Shape}} $>$ \& \mbox{\hyperlink{classCanvas_aa4a9d677b2bcdcd1b8d923b66e282095}{get\+Shape}} (int shape\+No) const
 \begin{DoxyCompactList}\small\item\em Gets a specified shape. \end{DoxyCompactList}\item 
-std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classShape}{Shape}} $>$ $>$ \mbox{\hyperlink{classCanvas_adf2d28850c495548bd4488690e8d9bfa}{get\+Shapes}} () const
+const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classShape}{Shape}} $>$ $>$ \& \mbox{\hyperlink{classCanvas_aa127d7fa40741946655036c7a4919722}{get\+Shapes}} () const
 \begin{DoxyCompactList}\small\item\em Gets all of the \mbox{\hyperlink{classShape}{Shape}} objects from the canvas. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classCanvas_a1278b2b421d559e763dfdc19a60feb97}{to\+String}} () const
 \begin{DoxyCompactList}\small\item\em Converts the canvas to a string representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -50,6 +50,12 @@ double {\bfseries height}
 \mbox{\Hypertarget{classCanvas_a325996265fc4293b60055953cf17b539}\label{classCanvas_a325996265fc4293b60055953cf17b539}} 
 std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classShape}{Shape}} $>$ $>$ {\bfseries shapes}
 \begin{DoxyCompactList}\small\item\em A vector of unique pointers to \mbox{\hyperlink{classShape}{Shape}} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCanvas_a3f270b1ab15ae8c61bb1c2a432425b9e}\label{classCanvas_a3f270b1ab15ae8c61bb1c2a432425b9e}} 
+static const int {\bfseries PRECISION} = 6
+\begin{DoxyCompactList}\small\item\em Number of decimal places when formatting double values. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -150,11 +156,11 @@ Gets the height of the canvas.
 \begin{DoxyReturn}{Returns}
 double The canvas height. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classCanvas_af67a61c6eae1fc26d4a9706b1c19f1fe}\label{classCanvas_af67a61c6eae1fc26d4a9706b1c19f1fe}} 
+\mbox{\Hypertarget{classCanvas_aa4a9d677b2bcdcd1b8d923b66e282095}\label{classCanvas_aa4a9d677b2bcdcd1b8d923b66e282095}} 
 \index{Canvas@{Canvas}!getShape@{getShape}}
 \index{getShape@{getShape}!Canvas@{Canvas}}
 \doxysubsubsection{\texorpdfstring{getShape()}{getShape()}}
-{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classShape}{Shape}} $>$ Canvas\+::get\+Shape (\begin{DoxyParamCaption}\item[{int}]{shape\+No }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classShape}{Shape}} $>$ \& Canvas\+::get\+Shape (\begin{DoxyParamCaption}\item[{int}]{shape\+No }\end{DoxyParamCaption}) const}
 
 
 
@@ -166,20 +172,20 @@ Gets a specified shape.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A unique pointer to the requested \mbox{\hyperlink{classShape}{Shape}} objects. 
+A const reference to the unique pointer of the requested \mbox{\hyperlink{classShape}{Shape}} object. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classCanvas_adf2d28850c495548bd4488690e8d9bfa}\label{classCanvas_adf2d28850c495548bd4488690e8d9bfa}} 
+\mbox{\Hypertarget{classCanvas_aa127d7fa40741946655036c7a4919722}\label{classCanvas_aa127d7fa40741946655036c7a4919722}} 
 \index{Canvas@{Canvas}!getShapes@{getShapes}}
 \index{getShapes@{getShapes}!Canvas@{Canvas}}
 \doxysubsubsection{\texorpdfstring{getShapes()}{getShapes()}}
-{\footnotesize\ttfamily std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classShape}{Shape}} $>$ $>$ Canvas\+::get\+Shapes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classShape}{Shape}} $>$ $>$ \& Canvas\+::get\+Shapes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
 Gets all of the \mbox{\hyperlink{classShape}{Shape}} objects from the canvas. 
 
 \begin{DoxyReturn}{Returns}
-A vector of unique pointers to \mbox{\hyperlink{classShape}{Shape}} objects. 
+A const reference to a vector of unique pointers to \mbox{\hyperlink{classShape}{Shape}} objects. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classCanvas_a568845f34e989dd2f9a8061d7ed8f176}\label{classCanvas_a568845f34e989dd2f9a8061d7ed8f176}} 
 \index{Canvas@{Canvas}!getWidth@{getWidth}}
@@ -256,6 +262,7 @@ std\+::string A string representing the canvas.
 \end{DoxyReturn}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{Canvas_8h}{Canvas.\+h}}\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{Canvas_8h}{Canvas.\+h}}\item 
+src/Canvas.\+cpp\end{DoxyCompactItemize}
